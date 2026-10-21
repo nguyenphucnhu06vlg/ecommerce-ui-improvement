@@ -1,42 +1,50 @@
-# Giao diện chi tiết sản phẩm VIETTIEN (HTML5 + CSS3)
-
-Đây là dự án giao diện tĩnh phục vụ bài tập. Không sử dụng backend, cơ sở dữ liệu, JavaScript hoặc thư viện giao diện.
-
-## Cấu trúc
-
-- `index.html`: cấu trúc nội dung trang.
-- `style.css`: màu sắc, bố cục, thành phần và responsive.
-
-## Cách chạy
-
-1. Tải và giải nén thư mục dự án.
-2. Mở `index.html` bằng Chrome, Edge, Firefox hoặc trình duyệt hiện đại.
-3. Để thuận tiện khi chỉnh sửa, mở thư mục bằng Visual Studio Code. Có thể dùng tiện ích Live Server nếu đã cài, nhưng không bắt buộc.
-4. Cần có kết nối Internet để tải ảnh minh họa từ Unsplash và font Be Vietnam Pro từ Google Fonts. Nếu không có mạng, thay các URL ảnh bằng ảnh cục bộ trong thư mục `images/` và dùng font hệ thống.
-
-## Lưu ý
-
-- Đây là mockup minh họa, không phải website chính thức của Việt Tiến.
-- Giá, mã sản phẩm, đánh giá, thông số size và chính sách trong trang là dữ liệu mẫu; cần xác minh và thay bằng dữ liệu chính thức trước khi sử dụng thực tế.
-- Nút mua hàng, tăng/giảm số lượng, phóng to ảnh, menu và nút thêm nhanh chỉ minh họa giao diện, chưa có chức năng xử lý vì dự án không dùng JavaScript/backend.
-- Lựa chọn màu/size dùng radio HTML nên có thể thay đổi trạng thái lựa chọn. Các mục chính sách dùng `details/summary` và có thể mở/đóng.
-
-## Checklist kiểm tra
-
-- [ ] Mở trang ở màn hình desktop (ví dụ 1366px): ảnh và thông tin sản phẩm nằm cạnh nhau.
-- [ ] Kiểm tra tablet (ví dụ 800px): các cột vẫn đủ rộng, không đè lên nhau.
-- [ ] Kiểm tra mobile (ví dụ 390px và 320px): nội dung xếp dọc, không có cuộn ngang toàn trang.
-- [ ] Thử chọn màu và size; size XXL mẫu bị vô hiệu hóa.
-- [ ] Mở/đóng các mục giao hàng, đổi trả và hỗ trợ.
-- [ ] Dùng phím Tab để kiểm tra khả năng focus và trạng thái focus nhìn thấy được.
-- [ ] Kiểm tra văn bản thay thế ảnh (alt), nhãn điều hướng và độ tương phản.
-- [ ] Kiểm tra khi ảnh hoặc font bên ngoài không tải được.
-- [ ] Thay toàn bộ giá, mã sản phẩm, bảng size và chính sách mẫu bằng thông tin đã xác minh.
-- [ ] Nếu muốn nút mua hàng hoạt động thật, cần bổ sung JavaScript và hệ thống giỏ hàng/backend ở bước sau.
+# E-commerce UI Improvement
 
 
-## Quy ước tổ chức code
+## 1. Giới thiệu
 
-- `index.html` được chia khu vực bằng chú thích: header, điều hướng, sản phẩm, mô tả, bảng size, chính sách, sản phẩm liên quan và footer.
-- `style.css` được trình bày theo từng khai báo trên dòng riêng, kèm tiêu đề nhóm để dễ tìm và chỉnh sửa.
-- Các giá trị giao diện và breakpoint được giữ nguyên; lần chỉnh sửa này tập trung vào khả năng đọc và bảo trì code.
+Dự án xây dựng giao diện trang chi tiết sản phẩm cho website thương mại điện tử thời trang Việt Tiến bằng HTML5 và CSS3. Giao diện tập trung trình bày hình ảnh, tên và giá sản phẩm, lựa chọn kích cỡ, thông tin mô tả, chính sách mua hàng và các sản phẩm liên quan.
+
+Giao diện được tổ chức theo hướng rõ ràng, dễ sử dụng và có điều chỉnh để hiển thị phù hợp trên nhiều kích thước màn hình.
+
+## 2. Website tham khảo
+
+- **Tên website:** Việt Tiến
+- **URL:** https://www.viettien.com.vn/ *(cần kiểm tra lại đường dẫn trước khi nộp)*
+- **Khu vực đã khảo sát:** Trang chi tiết sản phẩm, bao gồm hình ảnh, thông tin và giá sản phẩm, lựa chọn kích cỡ, mô tả, chính sách mua hàng và sản phẩm liên quan.
+
+## 3. Chức năng
+
+- Hiển thị hình ảnh và thông tin chi tiết sản phẩm.
+- Hiển thị tên, giá và mô tả sản phẩm.
+- Trình bày các tùy chọn sản phẩm như màu sắc, kích cỡ và số lượng.
+- Hiển thị bảng hướng dẫn chọn size và chính sách mua hàng.
+- Hiển thị danh sách sản phẩm liên quan.
+- Hỗ trợ bố cục responsive cho máy tính, máy tính bảng và điện thoại.
+
+**Lưu ý:** Đây là giao diện tĩnh, chưa kết nối backend. Chức năng giỏ hàng và đặt hàng chưa xử lý giao dịch thực tế; thông tin sản phẩm mẫu cần được xác minh trước khi sử dụng.
+
+## 4. Công nghệ
+
+- HTML5
+- CSS3
+
+## 5. Cách chạy
+
+1. Giải nén thư mục dự án.
+2. Mở file `index.html` bằng trình duyệt web.
+3. Đảm bảo có kết nối Internet để tải các tài nguyên bên ngoài như font chữ và hình ảnh, nếu được sử dụng.
+
+## 6. Cải tiến đã thực hiện
+
+- Bổ sung chú thích trong HTML để phân chia các khu vực giao diện, giúp tìm kiếm và chỉnh sửa nội dung dễ dàng hơn.
+- Sắp xếp CSS theo nhóm chức năng, trình bày các thuộc tính trên từng dòng để mã nguồn dễ đọc.
+- Phân chia các quy tắc responsive để thuận tiện theo dõi và điều chỉnh giao diện trên màn hình nhỏ.
+- Cải thiện khả năng bảo trì mã nguồn bằng cách tổ chức các phần tử theo chức năng.
+- Rà soát cách thể hiện trạng thái tương tác của nút hành động chính.
+
+## 7. Hỗ trợ từ AI
+
+ChatGPT được sử dụng để hỗ trợ đề xuất bố cục trang chi tiết sản phẩm, giải thích cách tổ chức HTML/CSS, gợi ý cải thiện giao diện và sắp xếp mã nguồn. AI cũng hỗ trợ soạn thảo tài liệu mô tả dự án.
+
+Tôi cần tự kiểm tra giao diện trên trình duyệt, đối chiếu tên class giữa HTML và CSS, kiểm tra khả năng hiển thị trên nhiều kích thước màn hình và xác minh thông tin tham khảo. Những nội dung chưa được kiểm tra thực tế sẽ được rà soát và điều chỉnh trước khi nộp bài.
