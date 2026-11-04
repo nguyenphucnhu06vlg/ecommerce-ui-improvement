@@ -1792,3 +1792,71 @@ img {
         font-size: 24px;
     }
 }
+
+/* 1. Bố cục chính: Hình ảnh và thông tin sản phẩm */
+.product-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 56px;
+}
+
+.gallery {
+    flex: 1;
+    min-width: 0;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 2. Sắp xếp các ảnh sản phẩm thu nhỏ */
+.thumbnail-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.thumbnail {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 3. Sắp xếp khu vực mua hàng */
+.purchase-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 4. Sắp xếp thông tin dịch vụ */
+.service-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 5. Responsive: Chuyển thành một cột trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .product-layout {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .gallery,
+    .product-info {
+        width: 100%;
+    }
+}
+
