@@ -246,71 +246,38 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Chức năng thay đổi ảnh sản phẩm
     const mainImage = document.getElementById("mainProductImage");
-    const thumbnails = document.querySelectorAll(".thumbnail");
+    const gallery = document.querySelector(".thumbnail-row");
 
-    thumbnails.forEach(function (thumbnail) {
+    if (!mainImage || !gallery) {
+        console.error("Không tìm thấy khu vực hình ảnh sản phẩm!");
+        return;
+    }
 
-        thumbnail.addEventListener("click", function () {
+    gallery.addEventListener("click", function(event) {
 
-            const newImage = this.dataset.image;
-            const newAlt = this.dataset.alt;
+        const thumbnail = event.target.closest(".thumbnail");
 
-            // Thay đổi ảnh lớn
-            mainImage.src = newImage;
-            mainImage.alt = newAlt;
+        if (!thumbnail) return;
 
-            // Cập nhật ảnh đang được chọn
-            thumbnails.forEach(function (item) {
-                item.classList.remove("active");
-                item.setAttribute("aria-pressed", "false");
-            });
+        const imageUrl = thumbnail.getAttribute("data-image");
 
-            this.classList.add("active");
-            this.setAttribute("aria-pressed", "true");
+        if (!imageUrl) {
+            console.error("Ảnh chưa có đường dẫn data-image!");
+            return;
+        }
 
+        // Thay đổi ảnh lớn
+        mainImage.src = imageUrl;
+
+        // Cập nhật viền ảnh đang chọn
+        gallery.querySelectorAll(".thumbnail").forEach(function(item) {
+            item.classList.remove("active");
+            item.setAttribute("aria-pressed", "false");
         });
 
-    });
-
-
-    // 2. Chức năng tăng giảm số lượng
-    const quantityInput = document.getElementById("quantity");
-    const quantityButtons = document.querySelectorAll(".quantity-btn");
-
-    quantityButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            let quantity = parseInt(quantityInput.value) || 1;
-
-            if (this.dataset.action === "increase") {
-                quantity++;
-            }
-
-            if (this.dataset.action === "decrease") {
-                quantity--;
-            }
-
-            // Giới hạn số lượng từ 1 đến 99
-            quantity = Math.max(1, Math.min(99, quantity));
-
-            quantityInput.value = quantity;
-
-        });
-
-    });
-
-
-    // 3. Kiểm tra khi khách nhập số lượng trực tiếp
-    quantityInput.addEventListener("change", function () {
-
-        let quantity = parseInt(this.value) || 1;
-
-        quantity = Math.max(1, Math.min(99, quantity));
-
-        this.value = quantity;
+        thumbnail.classList.add("active");
+        thumbnail.setAttribute("aria-pressed", "true");
 
     });
 
