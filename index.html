@@ -242,5 +242,80 @@
   <footer class="site-footer">
     <div class="footer-inner container"><a class="brand brand-footer" href="#">VIET<span>TIEN</span></a><p>Thời trang nam hiện đại · Giao diện minh họa phục vụ bài tập HTML5 và CSS3.</p><a href="#product-title">Lên đầu trang ↑</a></div>
   </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. Chức năng thay đổi ảnh sản phẩm
+    const mainImage = document.getElementById("mainProductImage");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(function (thumbnail) {
+
+        thumbnail.addEventListener("click", function () {
+
+            const newImage = this.dataset.image;
+            const newAlt = this.dataset.alt;
+
+            // Thay đổi ảnh lớn
+            mainImage.src = newImage;
+            mainImage.alt = newAlt;
+
+            // Cập nhật ảnh đang được chọn
+            thumbnails.forEach(function (item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
+            });
+
+            this.classList.add("active");
+            this.setAttribute("aria-pressed", "true");
+
+        });
+
+    });
+
+
+    // 2. Chức năng tăng giảm số lượng
+    const quantityInput = document.getElementById("quantity");
+    const quantityButtons = document.querySelectorAll(".quantity-btn");
+
+    quantityButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            let quantity = parseInt(quantityInput.value) || 1;
+
+            if (this.dataset.action === "increase") {
+                quantity++;
+            }
+
+            if (this.dataset.action === "decrease") {
+                quantity--;
+            }
+
+            // Giới hạn số lượng từ 1 đến 99
+            quantity = Math.max(1, Math.min(99, quantity));
+
+            quantityInput.value = quantity;
+
+        });
+
+    });
+
+
+    // 3. Kiểm tra khi khách nhập số lượng trực tiếp
+    quantityInput.addEventListener("change", function () {
+
+        let quantity = parseInt(this.value) || 1;
+
+        quantity = Math.max(1, Math.min(99, quantity));
+
+        this.value = quantity;
+
+    });
+
+});
+</script>
+
 </body>
 </html>
