@@ -1896,3 +1896,51 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* 1. Hiệu ứng cho nút Thêm vào giỏ hàng */
+.button-primary {
+    background-color: #19395f;
+    color: #ffffff;
+    border: 1px solid #19395f;
+    padding: 14px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    /* Tạo chuyển đổi mượt */
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Khi di chuột vào nút */
+.button-primary:hover {
+    background-color: #294f79;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(25, 57, 95, 0.2);
+}
+
+/* Khi điều hướng bằng bàn phím */
+.button-primary:focus-visible {
+    outline: 3px solid #e6a23c;
+    outline-offset: 3px;
+}
+
+/* 2. Hiệu ứng cho liên kết Hướng dẫn chọn size */
+.option-heading a {
+    color: #19395f;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Khi di chuột vào liên kết */
+.option-heading a:hover {
+    color: #c17b32;
+}
+
+/* Khi sử dụng bàn phím */
+.option-heading a:focus-visible {
+    outline: 2px solid #e6a23c;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
