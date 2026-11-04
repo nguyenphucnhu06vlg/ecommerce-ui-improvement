@@ -46,19 +46,76 @@
     <!-- 4. Khu vực chính: hình ảnh và thông tin sản phẩm -->
     <section class="product-layout container" aria-labelledby="product-title">
       <div class="gallery">
-        <div class="main-image">
-          <span class="product-badge">BÁN CHẠY</span>
-          <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=85" alt="Người mẫu mặc áo sơ mi trắng nam dài tay">
-          <button class="zoom-button" type="button" aria-label="Phóng to hình ảnh">↗</button>
-        </div>
-        <div class="thumbnail-row" aria-label="Ảnh sản phẩm">
-          <button class="thumbnail active" type="button" aria-label="Ảnh sản phẩm 1"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=240&q=75" alt=""></button>
-          <button class="thumbnail" type="button" aria-label="Ảnh sản phẩm 2"><img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=240&q=75" alt=""></button>
-          <button class="thumbnail" type="button" aria-label="Ảnh sản phẩm 3"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=240&q=75" alt=""></button>
-          <button class="thumbnail" type="button" aria-label="Ảnh sản phẩm 4"><img src="https://images.unsplash.com/photo-1620012253295-c15a3e9c2a4a?auto=format&fit=crop&w=240&q=75" alt=""></button>
-        </div>
-        <p class="gallery-note">Hình ảnh minh họa giao diện. Sản phẩm và hình ảnh cần được thay bằng dữ liệu chính thức khi sử dụng thực tế.</p>
-      </div>
+
+  <!-- Ảnh sản phẩm chính -->
+  <div class="main-image">
+    <span class="product-badge">BÁN CHẠY</span>
+
+    <img
+      id="mainProductImage"
+      src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=85"
+      alt="Áo sơ mi nam dài tay"
+    >
+
+    <button class="zoom-button" type="button" aria-label="Phóng to hình ảnh">
+      ↗
+    </button>
+  </div>
+
+  <!-- Danh sách ảnh thu nhỏ -->
+  <div class="thumbnail-row" aria-label="Ảnh sản phẩm">
+
+    <button
+      class="thumbnail active"
+      type="button"
+      data-image="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=85"
+      data-alt="Áo sơ mi nam dài tay màu xanh"
+      aria-label="Xem ảnh sản phẩm 1"
+      aria-pressed="true"
+    >
+      <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=240&q=75" alt="">
+    </button>
+
+    <button
+      class="thumbnail"
+      type="button"
+      data-image="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1200&q=85"
+      data-alt="Áo sơ mi trắng được treo trên móc"
+      aria-label="Xem ảnh sản phẩm 2"
+      aria-pressed="false"
+    >
+      <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=240&q=75" alt="">
+    </button>
+
+    <button
+      class="thumbnail"
+      type="button"
+      data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1200&q=85"
+      data-alt="Các mẫu áo sơ mi được sắp xếp"
+      aria-label="Xem ảnh sản phẩm 3"
+      aria-pressed="false"
+    >
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=240&q=75" alt="">
+    </button>
+
+    <button
+      class="thumbnail"
+      type="button"
+      data-image="https://images.unsplash.com/photo-1620012253295-c15a3e9c2a4a?auto=format&fit=crop&w=1200&q=85"
+      data-alt="Hình ảnh chi tiết áo sơ mi nam"
+      aria-label="Xem ảnh sản phẩm 4"
+      aria-pressed="false"
+    >
+      <img src="https://images.unsplash.com/photo-1620012253295-c15a3e9c2a4a?auto=format&fit=crop&w=240&q=75" alt="">
+    </button>
+
+  </div>
+
+  <p class="gallery-note">
+    Hình ảnh minh họa giao diện. Sản phẩm và hình ảnh cần được thay bằng dữ liệu chính thức khi sử dụng thực tế.
+  </p>
+
+</div>
 
       <div class="product-info">
         <div class="eyebrow">VIETTIEN · THỜI TRANG CÔNG SỞ</div>
@@ -91,13 +148,49 @@
         </div>
 
         <div class="purchase-row">
-          <div class="quantity-control" aria-label="Số lượng">
-            <button type="button" aria-label="Giảm số lượng">−</button><span>1</span><button type="button" aria-label="Tăng số lượng">+</button>
-          </div>
-          <button class="button button-primary" type="button">Thêm vào giỏ hàng</button>
-        </div>
-        <button class="button button-secondary" type="button">Mua ngay</button>
-        <p class="demo-note">Các nút đang ở chế độ giao diện mẫu, chưa kết nối chức năng đặt hàng.</p>
+
+  <!-- Bộ điều chỉnh số lượng -->
+  <div class="quantity-control">
+
+    <button
+      type="button"
+      class="quantity-btn"
+      data-action="decrease"
+      aria-label="Giảm số lượng"
+    >
+      −
+    </button>
+
+    <input
+      type="number"
+      id="quantity"
+      name="quantity"
+      value="1"
+      min="1"
+      max="99"
+      aria-label="Số lượng sản phẩm"
+    >
+
+    <button
+      type="button"
+      class="quantity-btn"
+      data-action="increase"
+      aria-label="Tăng số lượng"
+    >
+      +
+    </button>
+
+  </div>
+
+  <button class="button button-primary" type="button">
+    Thêm vào giỏ hàng
+  </button>
+
+</div>
+
+<button class="button button-secondary" type="button">
+  Mua ngay
+</button>
 
         <div class="service-points">
           <div><span class="service-icon">↗</span><span><strong>Giao hàng toàn quốc</strong><small>Thông tin phí và thời gian giao hàng tại bước thanh toán.</small></span></div>
