@@ -1286,3 +1286,121 @@ input:focus-visible {
   outline: 2px solid #b36b28;
   outline-offset: 3px;
 }
+
+
+/* =================================
+   1. ELEMENT SELECTOR
+================================= */
+
+/* Định dạng chung cho tiêu đề sản phẩm */
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Định dạng hình ảnh */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =================================
+   2. CLASS SELECTOR
+================================= */
+
+/* Khung sản phẩm */
+.related-card {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #e4e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Hình ảnh sản phẩm */
+.related-image {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+/* Giá sản phẩm */
+.related-price {
+    margin: 8px 0 12px;
+    color: #17365d;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   3. DESCENDANT SELECTOR
+================================= */
+
+/* Tên sản phẩm bên trong thẻ sản phẩm */
+.related-card h3 {
+    margin: 10px 0 5px;
+    color: #222831;
+}
+
+/* Liên kết tên sản phẩm */
+.related-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.related-card h3 a:hover {
+    color: #17365d;
+}
+
+
+/* =================================
+   4. ĐỊNH DẠNG LIÊN KẾT THÀNH NÚT
+================================= */
+
+/* Liên kết Xem tất cả sản phẩm */
+.related-heading > a {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid #17365d;
+    border-radius: 4px;
+    background-color: #17365d;
+    color: #ffffff;
+    font-size: 11px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.related-heading > a:hover {
+    background-color: #102744;
+}
+
+/* Nút thao tác trên thẻ sản phẩm */
+.related-card .quick-add {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #17365d;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #17365d;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.related-card .quick-add:hover {
+    background-color: #17365d;
+    color: #ffffff;
+}
+
+
+/* =================================
+   5. BOX-SIZING
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
