@@ -1583,3 +1583,212 @@ img {
 
 }
 
+
+/* =====================================
+   1. ELEMENT SELECTOR
+   Định dạng chung cho website
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #24364b;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =====================================
+   2. CLASS SELECTOR
+   Định dạng khu vực thông tin sản phẩm
+===================================== */
+
+.product-info {
+    background-color: #ffffff;
+
+    /* Box Model */
+    margin: 15px 0;
+    padding: 24px;
+
+    border: 1px solid #e0e5eb;
+    border-radius: 8px;
+}
+
+
+/* =====================================
+   3. DESCENDANT SELECTOR
+   Định dạng tên sản phẩm
+===================================== */
+
+.product-info h1 {
+    color: #19375d;
+    font-size: 28px;
+    font-weight: 700;
+
+    margin: 12px 0;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #e0e5eb;
+}
+
+
+/* =====================================
+   4. ĐỊNH DẠNG GIÁ SẢN PHẨM
+===================================== */
+
+.product-info .price-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 20px 0 10px;
+    padding: 12px 0;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.product-info .price-row .current-price {
+    color: #19375d;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.product-info .price-row .old-price {
+    color: #999999;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.product-info .price-row .discount {
+    padding: 5px 9px;
+    background-color: #f9e8e8;
+    color: #bd4545;
+
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   5. BOX MODEL CHO KHU VỰC CHỌN SIZE
+===================================== */
+
+.product-info .option-block {
+    margin: 20px 0;
+    padding: 15px;
+
+    border: 1px solid #e0e5eb;
+    border-radius: 6px;
+}
+
+.product-info .option-heading {
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+
+/* =====================================
+   6. ĐỊNH DẠNG NÚT THAO TÁC
+===================================== */
+
+.product-info .button {
+    padding: 14px 20px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.product-info .button-primary {
+    background-color: #19375d;
+    color: #ffffff;
+    border: 1px solid #19375d;
+}
+
+.product-info .button-primary:hover {
+    background-color: #294d76;
+}
+
+.product-info .button-secondary {
+    background-color: #ffffff;
+    color: #19375d;
+    border: 1px solid #19375d;
+}
+
+.product-info .button-secondary:hover {
+    background-color: #f0f4f8;
+}
+
+
+/* =====================================
+   7. ĐỊNH DẠNG LIÊN KẾT
+===================================== */
+
+.product-info .option-heading a {
+    display: inline-block;
+
+    padding: 7px 12px;
+    border: 1px solid #19375d;
+    border-radius: 4px;
+
+    color: #19375d;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.product-info .option-heading a:hover {
+    background-color: #19375d;
+    color: #ffffff;
+}
+
+
+/* =====================================
+   8. BO GÓC VÀ ĐỊNH DẠNG SỐ LƯỢNG
+===================================== */
+
+.product-info .quantity-control {
+    border: 1px solid #19375d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-info .service-points {
+    margin-top: 25px;
+    padding-top: 18px;
+
+    border-top: 1px solid #e0e5eb;
+}
+
+
+/* =====================================
+   9. RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+    .product-info {
+        margin: 10px 0;
+        padding: 16px;
+    }
+
+    .product-info h1 {
+        font-size: 23px;
+    }
+
+    .product-info .price-row .current-price {
+        font-size: 24px;
+    }
+}
